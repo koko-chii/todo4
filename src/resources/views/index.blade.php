@@ -35,7 +35,6 @@
             <tr class="todo-table__row">
                 <td class="todo-table__item">
                     <form class="update-form">
-                        <input type="text" name="name" value="{{ old('name') }}" />
                         <button class="update-form__button-submit" type="submit">更新</button>
                         <div class="form__error">
                             @error('name')
