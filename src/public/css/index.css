@@ -1,0 +1,139 @@
+.todo__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* メッセージエリア */
+.todo__alert {
+    display: flex;
+    width: 100%;
+    background-color: #d1e7dd;
+    padding: 15px;
+    padding-left: 40px;
+    margin-bottom: 50px; /* 上部との余白 */
+    text-align: left;
+}
+
+.todo__alert--success {
+    color: #0f5132;
+    margin: 0;
+}
+
+/* 中央のコンテンツ幅を制限 */
+.todo__inner {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 新規作成フォーム */
+.create-form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.create-form__item {
+    width: 80%;
+}
+
+.create-form__item input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.create-form__button-submit {
+    padding: 10px 60px;
+    margin-left: 40px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* テーブルスタイル */
+.todo-table {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.todo-table__inner {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.todo-table__header {
+    text-align: left;
+    font-size: 20px;
+    padding-bottom: 15px;
+}
+
+.todo-table__row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+.todo-table__item {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+}
+
+/* 更新フォーム（入力欄とボタンを横並びに） */
+.update-form {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.update-form input {
+    flex-grow: 1;
+    border: none;
+    margin-right: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* 削除ボタンのフォームも横並びを維持 */
+.delete-form {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+/* ボタンの共通設定 */
+.update-form__button-submit,
+.delete-form__button-submit {
+    white-space: nowrap;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.update-form__button-submit {
+    background-color: #0000ff; /* 青色 */
+}
+
+.delete-form__button-submit {
+    background-color: #ff0000; /* 赤色 */
+}
+
+
+/* エラーメッセージ（指示通り一旦無視する場合も、最小限のスタイルを用意） */
+.form__error {
+    color: #ff0000;
+    font-size: 12px;
+    margin-top: 5px;
+}
