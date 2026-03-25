@@ -1,52 +1,52 @@
+/* 全体レイアウト */
 .todo__content {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* メッセージエリア */
-.todo__alert {
-    display: flex;
-    width: 100%;
-    background-color: #d1e7dd;
-    padding: 15px;
-    padding-left: 40px;
-    margin-bottom: 50px; /* 上部との余白 */
-    text-align: left;
-}
-
-.todo__alert--success {
-    color: #0f5132;
-    margin: 0;
-}
-
-/* 中央のコンテンツ幅を制限 */
+/* 中央のコンテンツ（フォーム）の開始位置を調整 */
 .todo__inner {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 970px;
+}
+
+.todo__alert {
+    margin-top: 0;
+}
+
+/* 成功メッセージ */
+.todo__alert--success {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    padding: 15px 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+    width: 100%;
 }
 
 /* 新規作成フォーム */
 .create-form {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 50px;
-}
-
-.create-form__item {
-    width: 80%;
+    justify-content:space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .create-form__item input {
-    width: 100%;
+    width: 550px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    margin: 60px auto 50px 180px; /* 上に60px、左右中央、下に50pxの余白 */
 }
 
 .create-form__button-submit {
-    padding: 10px 60px;
-    margin-left: 40px;
+    width: 160px;
+    gap:
+    justify-content: space-between;
+    padding: 10px 0px;
     background-color: #000;
     color: #fff;
     border: none;
@@ -57,78 +57,62 @@
 }
 
 /* テーブルスタイル */
-.todo-table {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
 .todo-table__inner {
-    width: 100%;
+    width: 68%;
     border-collapse: collapse;
+    margin-left: 180px;
 }
 
 .todo-table__header {
     text-align: left;
     font-size: 20px;
     padding-bottom: 15px;
+    border-bottom: none;
 }
 
 .todo-table__row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
     border-bottom: 1px solid #ccc;
-    padding: 10px 0;
 }
 
+/* 重要：文字とボタンを左右に分ける設定 */
 .todo-table__item {
     display: flex;
+    justify-content: center; /* これで左右両端に配置 */
     align-items: center;
-    justify-content: flex-end;
-    flex-grow: 1;
+    padding: 15px 0;
 }
 
-.update-form .delete-form {
+.todo-table__text {
+    flex: 1;
+    text-align: left;
+}
+
+.todo-table__buttons {
     display: flex;
-    align-items: center;
-    margin: 0;
+    gap: 10px; /* ボタン同士の隙間 */
 }
 
-.delete-form {
-    margin-left: 20px;
-}
-
-.update-form input {
-    width: auto;
-    max-width: 300px;
-}
-
-/* ボタンの共通設定 */
+/* 更新・削除ボタン共通 */
 .update-form__button-submit,
 .delete-form__button-submit {
-    white-space: nowrap;
     padding: 8px 15px;
     border: none;
     border-radius: 4px;
     color: #fff;
     cursor: pointer;
     font-weight: bold;
+    white-space: nowrap;
 }
 
 .update-form__button-submit {
-    background-color: #0000ff; /* 青色 */
+    background-color: #4b00ff; /* 青 */
 }
 
 .delete-form__button-submit {
-    background-color: #ff0000; /* 赤色 */
+    background-color: #ff0000; /* 赤 */
 }
 
-
-/* エラーメッセージ（指示通り一旦無視する場合も、最小限のスタイルを用意） */
-.form__error {
-    color: #ff0000;
-    font-size: 12px;
-    margin-top: 5px;
+/* フォームの余白リセット */
+form {
+    margin: 0;
 }
