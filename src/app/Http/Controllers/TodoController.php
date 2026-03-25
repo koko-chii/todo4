@@ -13,16 +13,13 @@ class TodoController extends Controller
         return view('index', compact('todos'));
     }
 
-    public function store(Request $request)
+    public function store(TodoRequest $request)
     {
-        if ($request->filled('content')) {
+        $request->validate(['content' => 'required|max:20', ]);
 
             Todo::create(['content' => $request->content]);
 
             return redirect('/')->with('message', 'Todoを作成しました');
-        }
-
-        return redirect('/');
-
     }
+
 }

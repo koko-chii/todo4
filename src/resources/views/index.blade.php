@@ -41,13 +41,13 @@
                     <div class="todo-table__buttons">
                         <form class="update-form" action="/todos/update" method="post">
                             @csrf
-                            <input type="hidden" name="id" value="{{ $todo->id }}">
+                            <input type="hidden" name="content" value="{{ $todo->id }}">
                             <button class="update-form__button-submit" type="submit">更新</button>
                         </form>
 
                         <form class="delete-form" action="/todos/delete" method="post">
                             @csrf
-                            <input type="hidden" name="id" value="{{ $todo->id }}">
+                            <input type="hidden" name="content" value="{{ $todo->id }}">
                             <button class="delete-form__button-submit" type="submit">削除</button>
                         </form>
                     </div>
