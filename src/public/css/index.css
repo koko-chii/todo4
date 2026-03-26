@@ -58,7 +58,7 @@
 
 /* テーブルスタイル */
 .todo-table__inner {
-    width: 68%;
+    width: 67%;
     border-collapse: collapse;
     margin-left: 180px;
 }
@@ -85,6 +85,15 @@
 .todo-table__text {
     flex: 1;
     text-align: left;
+}
+
+.todo-table__item-input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none; /* クリックした時の青い枠も消す場合 */
+    font-size: 16px;
+    color: #333;
 }
 
 .todo-table__buttons {
