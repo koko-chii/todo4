@@ -35,7 +35,7 @@
             <tr class="todo-table__row">
                 <td class="todo-table__item">
                     <div class="todo-table__text">
-                        <input type="text" name="content" value="{{ $todo->content }}">
+                        <input type="text" name="content" value="{{ $todo->content }}" class="todo-table__item-input">
                     </div>
 
                     <div class="todo-table__buttons">

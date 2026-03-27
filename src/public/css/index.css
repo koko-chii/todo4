@@ -82,13 +82,10 @@
     padding: 15px 0;
 }
 
-.todo-table__text {
-    flex: 1;
-    text-align: left;
-}
-
 .todo-table__item-input {
-    width: 100%;
+    display: flex;
+    width: 650px;
+    text-align: left;
     border: none;
     background: transparent;
     outline: none; /* クリックした時の青い枠も消す場合 */
