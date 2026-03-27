@@ -34,23 +34,26 @@
             @foreach ($todos as $todo)
             <tr class="todo-table__row">
                 <td class="todo-table__item">
-                    <div class="todo-table__text">
-                        <input type="text" name="content" value="{{ $todo->content }}" class="todo-table__item-input">
-                    </div>
+                    <form action="{{ route('todos.update') }}" method="post">
+                        @csrf
+                        @method('PATCH')
+                        <input type="hidden" name="id" value="{{ $todo->id }}">
 
-                    <div class="todo-table__buttons">
-                        <form class="update-form" action="/todos/update" method="post">
-                            @csrf
-                            <input type="hidden" name="content" value="{{ $todo->id }}">
+                        <div class="todo-table__item input">
+                            <input type="text" name="content" value="{{ $todo->content }}" class="todo-table__item-input">
+                        </div>
+
+                        <div class="todo-table__buttons">
                             <button class="update-form__button-submit" type="submit">更新</button>
-                        </form>
+                    </form>
 
-                        <form class="delete-form" action="/todos/delete" method="post">
-                            @csrf
-                            <input type="hidden" name="content" value="{{ $todo->id }}">
-                            <button class="delete-form__button-submit" type="submit">削除</button>
-                        </form>
-                    </div>
+                            <form action="{{ route('todos.destroy') }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <input type="hidden" name="id" value="{{ $todo->id }}">
+                                <button class="delete-form__button-submit" type="submit">削除</button>
+                            </form>
+                        </div>
                 </td>
             </tr>
             @endforeach

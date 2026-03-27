@@ -19,7 +19,7 @@
     background-color: #d1e7dd;
     color: #0f5132;
     padding: 15px 40px;
-    margin-top: 20px;
+    margin-top: 0px;
     margin-bottom: 20px;
     text-align: left;
     width: 100%;
@@ -82,8 +82,14 @@
     padding: 15px 0;
 }
 
-.todo-table__item-input {
+.todo-table__item form {
     display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo-table__item-input {
     width: 650px;
     text-align: left;
     border: none;
