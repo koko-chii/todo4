@@ -7,7 +7,7 @@
 
 /* 中央のコンテンツ（フォーム）の開始位置を調整 */
 .todo__inner {
-    max-width: 970px;
+    max-width: 1000px;
 }
 
 .todo__alert {
@@ -25,55 +25,45 @@
     width: 100%;
 }
 
+.todo__alert--danger {
+    color: #ff0000;
+    margin-left: 80px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
 .todo__form-ttl {
     display: flex;
     margin: 60px 0px 0px 80px;
 }
 
-/* 新規作成フォーム */
-.create-form {
+.create-for,
+.todo__search-form {
     display: flex;
-    justify-content:space-between;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
 }
 
-.create-form__item input {
-    width: 500px;
+.create-form__item,
+.todo__search-form__item {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* inputとselectの間の隙間 */
+    margin-left: 80px; /* 左の余白を統一 */
+}
+
+.create-form__item input,
+.todo__search-form__item input {
+    width: 450px;
     height: 40px;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 2px;
     margin: 20px 0px 0px 80px;
 }
 
-.create-form__button-submit {
-    width: 160px;
-    height: 40px;
-    margin: 20px 0 0 60px;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
-    font-weight: bold;
-    white-space: nowrap;
-}
-
-.category__search-form__content {
-    display: flex;
-    justify-content:space-between;
-    width: 100%;
-}
-
-.category__search-form__item-input {
-width: 160px;
-height: 40px;
-margin: 20px;
-border: 1px solid #ccc;
-border-radius: 2px;
-align-items: center;
-}
-
+.create-form__button-submit,
 .search-form__button-submit {
     width: 160px;
     height: 40px;
@@ -87,29 +77,21 @@ align-items: center;
     white-space: nowrap;
 }
 
-.todo__search-form {
-    display: flex;
-    justify-content:space-between;
-    width: 100%;
+.category__select {
+width: 160px;
+height: 40px;
+margin: 20p 0 0 0;
+padding: 0 10px;
+border: 1px solid #ccc;
+border-radius: 2px;
+background-color: #fff;
+color: #333;
 }
 
 .todo__search-form--ttl {
     display: flex;
     margin: 20px 0px 0px 60px;
 }
-
-.todo__search-form__item input {
-    width: 500px;
-    height: 40px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin: 20px 0px 0px 60px;
-}
-
-
-
-
 
 /* テーブルスタイル */
 .todo-table__inner {

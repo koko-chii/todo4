@@ -1,0 +1,59 @@
+.category__content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.category__alert--success {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    padding: 15px 40px;
+    margin-bottom: 20px;
+    text-align: left;
+    width: 80%;
+    margin-left: 80px;
+    border-radius: 4px;
+}
+
+.category__alert--danger {
+    color: #ff0000;
+    margin-left: 80px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.create-form {
+    display: flex;
+    margin-left: 80px;
+    gap: 60px;
+}
+
+.create-form__item input {
+    width: 700px; /* Todoより少し長め */
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.category-table__inner {
+    width: 80%;
+    margin: 40px 0 0 80px;
+    border-collapse: collapse;
+}
+
+.category-table__header {
+    text-align: left;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.category-table__row {
+    border-bottom: 1px solid #ccc;
+}
+
+.category-table__item-input {
+    width: 100%;
+    padding: 15px 0;
+    border: none;
+    background: transparent;
+}

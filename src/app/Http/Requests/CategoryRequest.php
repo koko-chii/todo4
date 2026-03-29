@@ -1,0 +1,37 @@
+<?php
+
+namespace App\Http\Requests;
+
+use App\Http\Requests\CategoryRequest;
+use Illuminate\Foundation\Http\FormRequest;
+
+class CategoryRequest extends FormRequest
+{
+
+    public function authorize()
+    {
+        return true;
+    }
+
+    public function rules()
+    {
+        return ['name' => ['required', 'string', 'max:10', 'unique:categories,name'],];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'カテゴリを入力してください',
+            'name.string'   => 'カテゴリを文字列で入力してください',
+            'name.max'      => 'カテゴリを10文字以下で入力してください',
+            'name.unique'   => 'カテゴリが既に存在しています',
+        ];
+    }
+    public function store(CategoryRequest $request)
+    {
+    Category::create($request->only(['name']));
+
+    return redirect('/categories')->with('message', 'カテゴリを作成しました');
+    }
+
+}
