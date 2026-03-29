@@ -25,28 +25,31 @@
     width: 100%;
 }
 
+.todo__form-ttl {
+    display: flex;
+    margin: 60px 0px 0px 80px;
+}
+
 /* 新規作成フォーム */
 .create-form {
     display: flex;
     justify-content:space-between;
-    align-items: center;
     width: 100%;
-    margin: 0 auto;
 }
 
 .create-form__item input {
-    width: 550px;
+    width: 500px;
+    height: 40px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    margin: 60px auto 50px 180px; /* 上に60px、左右中央、下に50pxの余白 */
+    margin: 20px 0px 0px 80px;
 }
 
 .create-form__button-submit {
     width: 160px;
-    gap:
-    justify-content:
-    padding: 10px 0px;
+    height: 40px;
+    margin: 20px 0 0 60px;
     background-color: #000;
     color: #fff;
     border: none;
@@ -55,6 +58,58 @@
     font-weight: bold;
     white-space: nowrap;
 }
+
+.category__search-form__content {
+    display: flex;
+    justify-content:space-between;
+    width: 100%;
+}
+
+.category__search-form__item-input {
+width: 160px;
+height: 40px;
+margin: 20px;
+border: 1px solid #ccc;
+border-radius: 2px;
+align-items: center;
+}
+
+.search-form__button-submit {
+    width: 160px;
+    height: 40px;
+    margin: 20px 0 0 60px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.todo__search-form {
+    display: flex;
+    justify-content:space-between;
+    width: 100%;
+}
+
+.todo__search-form--ttl {
+    display: flex;
+    margin: 20px 0px 0px 60px;
+}
+
+.todo__search-form__item input {
+    width: 500px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 20px 0px 0px 60px;
+}
+
+
+
+
 
 /* テーブルスタイル */
 .todo-table__inner {
@@ -66,7 +121,7 @@
 .todo-table__header {
     text-align: left;
     font-size: 20px;
-    padding-bottom: 15px;
+    padding-bottom: 0px;
     border-bottom: none;
 }
 

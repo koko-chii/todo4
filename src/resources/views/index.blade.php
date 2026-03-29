@@ -20,8 +20,8 @@
             <div class="create-form__item">
                 <input type="text" name="content" value="{{ old('content') }}" />
             </div>
-            <div class="search-form__item">
-                <input class="search-form__item-input" type="text" name="category_search">
+            <div class="category__search-form__item">
+                <input class="category__search-form__item-input" type="text" name="category_search">
             </div>
 
             <div class="create-form__button">
@@ -30,19 +30,23 @@
         </form>
     </div>
 
-    <div class="todo__form">
-        <h2 class="todo__form-ttl">Todo検索</h2>
-        <form class="search-form">
-            <div class="search-form__item">
-                <input class="search-form__item-input" type="text" name="keyword">
+    <div class="todo__content">
+        <div class="todo__search-form__inner">
+            <h2 class="todo__search-form--ttl">Todo検索</h2>
+            <form class="todo__search-form"  action="/todos" method="post">
+            @csrf
+            <div class="todo__search-form__item">
+                <input type="text" name="content" value="{{ old('content') }}" />
             </div>
-            <div class="search-form__item">
-                <input class="search-form__item-input" type="text" name="category_search">
+            <div class="category__search-form__item">
+                <input class="category__search-form__item-input" type="text" name="category_search">
             </div>
+
             <div class="search-form__button">
                 <button class="search-form__button-submit" type="submit">検索</button>
             </div>
-        </form>
+            </form>
+        </div>
     </div>
 
     <div class="todo-table">
