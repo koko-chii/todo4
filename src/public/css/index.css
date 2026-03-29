@@ -45,7 +45,7 @@
 .create-form__button-submit {
     width: 160px;
     gap:
-    justify-content: space-between;
+    justify-content:
     padding: 10px 0px;
     background-color: #000;
     color: #fff;
@@ -77,7 +77,7 @@
 /* 重要：文字とボタンを左右に分ける設定 */
 .todo-table__item {
     display: flex;
-    justify-content: center; /* これで左右両端に配置 */
+    justify-content: space-between;
     align-items: center;
     padding: 15px 0;
 }

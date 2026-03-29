@@ -18,6 +18,9 @@ body {
     margin-left: 120px;
     margin-bottom: 0;
     padding: 0 20px;
+    display: flex;
+    justify-content: space-between; /* 左右にわける */
+    align-items: center;
 }
 
 .header__logo {
@@ -25,4 +28,16 @@ body {
     text-decoration: none;
     font-size: 24px;
     font-weight: bold;
+}
+
+.header-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav__link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
 }

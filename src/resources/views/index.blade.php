@@ -14,10 +14,14 @@
 
 <div class="todo__content">
     <div class="todo__inner">
+        <h2 class="todo__form-ttl">新規作成</h2>
         <form class="create-form"  action="/todos" method="post">
             @csrf
             <div class="create-form__item">
                 <input type="text" name="content" value="{{ old('content') }}" />
+            </div>
+            <div class="search-form__item">
+                <input class="search-form__item-input" type="text" name="category_search">
             </div>
 
             <div class="create-form__button">
@@ -26,10 +30,27 @@
         </form>
     </div>
 
+    <div class="todo__form">
+        <h2 class="todo__form-ttl">Todo検索</h2>
+        <form class="search-form">
+            <div class="search-form__item">
+                <input class="search-form__item-input" type="text" name="keyword">
+            </div>
+            <div class="search-form__item">
+                <input class="search-form__item-input" type="text" name="category_search">
+            </div>
+            <div class="search-form__button">
+                <button class="search-form__button-submit" type="submit">検索</button>
+            </div>
+        </form>
+    </div>
+
     <div class="todo-table">
         <table class="todo-table__inner">
             <tr class="todo-table__row">
                 <th class="todo-table__header">Todo</th>
+                <th class="todo-table__header">カテゴリ</th>
+        <th class="todo-table__header"></th>
             </tr>
             @foreach ($todos as $todo)
             <tr class="todo-table__row">
@@ -38,7 +59,6 @@
                         @csrf
                         @method('PATCH')
                         <input type="hidden" name="id" value="{{ $todo->id }}">
-
                         <div class="todo-table__item input">
                             <input type="text" name="content" value="{{ $todo->content }}" class="todo-table__item-input">
                         </div>
