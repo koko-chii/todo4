@@ -16,7 +16,8 @@
 }
 
 .category__alert--danger {
-    color: #ff0000;
+    background-color:#f8d7da;
+    color: #842029;
     margin-left: 80px;
     margin-bottom: 10px;
     font-size: 14px;
