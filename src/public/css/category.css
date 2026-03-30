@@ -9,24 +9,23 @@
     color: #0f5132;
     padding: 15px 40px;
     margin-bottom: 20px;
+    font-size: 14px
     text-align: left;
-    width: 80%;
-    margin-left: 80px;
-    border-radius: 4px;
+    width: 100%;
 }
 
 .category__alert--danger {
     background-color:#f8d7da;
     color: #842029;
-    margin-left: 80px;
-    margin-bottom: 10px;
+    padding: 15px 40px;
     font-size: 14px;
+    text-align: left;
+    width: 100%;
 }
 
 .create-form {
     display: flex;
-    margin-left: 80px;
-    gap: 60px;
+    margin: 80px 0 0 100px;
 }
 
 .create-form__item input {
@@ -36,9 +35,22 @@
     border: 1px solid #ccc;
 }
 
+.create-form__button-submit {
+    width: 160px;
+    height: 40px;
+    margin-left: 60px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
 .category-table__inner {
     width: 80%;
-    margin: 40px 0 0 80px;
+    margin: 40px 0 0 100px;
     border-collapse: collapse;
 }
 
@@ -52,9 +64,40 @@
     border-bottom: 1px solid #ccc;
 }
 
+.category-table__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .category-table__item-input {
-    width: 100%;
+    width: 60%;
     padding: 15px 0;
     border: none;
     background: transparent;
+}
+
+.category-table__buttons {
+    display: flex;
+    gap: 10px; /* ボタン同士の隙間 */
+}
+
+/* 更新・削除ボタン共通 */
+.update-form__button-submit,
+.delete-form__button-submit {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.update-form__button-submit {
+    background-color: #4b00ff; /* 青 */
+}
+
+.delete-form__button-submit {
+    background-color: #ff0000; /* 赤 */
 }

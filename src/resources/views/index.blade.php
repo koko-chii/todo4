@@ -72,31 +72,36 @@
             <tr class="todo-table__row">
                 <th class="todo-table__header">Todo</th>
                 <th class="todo-table__header">カテゴリ</th>
-        <th class="todo-table__header"></th>
+                <th class="todo-table__header"></th>
             </tr>
             @foreach ($todos as $todo)
             <tr class="todo-table__row">
-                <form action="{{ route('todos.update') }}" method="post">
-                    @csrf
-                    @method('PATCH')
-                    <input type="hidden" name="id" value="{{ $todo->id }}">
+                <td class="todo-table__item">
+                    <input type="text" name="content" value="{{ $todo->content }}" class="todo-table__item-input" form="update-{{ $todo->id }}">
+                </td>
 
-                    <td class="todo-table__item">
-                        <input type="text" name="content" value="{{ $todo->content }}" class="todo-table__item-input">
-                    </td>
-                    <td class="todo-table__item">
-                        <div class="todo-table__buttons">
+                <td class="todo-table__item">
+                    <span class="todo-table__category-name">
+                        {{ $todo->category->name ?? '未設定' }}
+                    </span>
+                </td>
+                <td class="todo-table__item">
+                    <div class="todo-table__buttons">
+                        <form action="{{ route('todos.update') }}" method="post" id="update-{{ $todo->id }}">
+                            @csrf
+                            @method('PATCH')
+                            <input type="hidden" name="id" value="{{ $todo->id }}">
                             <button class="update-form__button-submit" type="submit">更新</button>
-                </form>
+                        </form>
 
-                            <form action="{{ route('todos.destroy') }}" method="post">
-                                @csrf
-                                @method('DELETE')
-                                <input type="hidden" name="id" value="{{ $todo->id }}">
-                                <button class="delete-form__button-submit" type="submit">削除</button>
-                            </form>
-                        </div>
-                    </td>
+                        <form action="{{ route('todos.destroy') }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <input type="hidden" name="id" value="{{ $todo->id }}">
+                            <button class="delete-form__button-submit" type="submit">削除</button>
+                        </form>
+                    </div>
+                </td>
             </tr>
             @endforeach
         </table>

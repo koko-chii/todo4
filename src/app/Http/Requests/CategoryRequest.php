@@ -27,11 +27,4 @@ class CategoryRequest extends FormRequest
             'name.unique'   => 'カテゴリが既に存在しています',
         ];
     }
-    public function store(CategoryRequest $request)
-    {
-    Category::create($request->only(['name']));
-
-    return redirect('/categories')->with('message', 'カテゴリを作成しました');
-    }
-
 }
