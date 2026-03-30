@@ -35,35 +35,33 @@
         </form>
     </div>
 
-    <div class="category-table">
-        <table class="category-table__inner">
-            <tr class="category-table__row">
-                <th class="category-table__header">category</th>
-            </tr>
-            @foreach ($categories as $category)
-            <tr class="category-table__row">
-                <td class="category-table__item">
-                    <form action="{{ route('categories.update') }}" method="post">
-                        @csrf
-                        @method('PATCH')
-                        <input type="hidden" name="id" value="{{ $category->id }}">
-                        <input type="text" name="name" value="{{ $category->name }}" class="category-table__item-input">
+        <div class="category-table">
+            <table class="category-table__inner">
+                <tr class="category-table__row">
+                    <th class="category-table__header">category</th>
+                </tr>
+                @foreach ($categories as $category)
+                <tr class="category-table__row">
+                    <td class="category-table__item">
+                        <form action="{{ route('categories.update') }}" method="post" class="update-form">
+                            @csrf
+                            @method('PATCH')
 
-                        <div class="category-table__buttons">
+                            <input type="text" name="name" value="{{ $category->name }}" class="category-table__item-input">
+                            <input type="hidden" name="id" value="{{ $category->id }}">
                             <button class="update-form__button-submit" type="submit">更新</button>
-                    </form>
+                        </form>
 
-                    <form action="{{ route('categories.destroy') }}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <input type="hidden" name="id" value="{{ $category->id }}">
-                        <button class="delete-form__button-submit" type="submit">削除</button>
-                    </form>
-                        </div>
-                </td>
-            </tr>
-            @endforeach
-        </table>
-    </div>
+                        <form action="{{ route('categories.destroy') }}" method="post" class="delete-form">
+                            @csrf
+                            @method('DELETE')
+                            <input type="hidden" name="id" value="{{ $category->id }}">
+                            <button class="delete-form__button-submit" type="submit">削除</button>
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
+            </table>
+        </div>
 </div>
 @endsection

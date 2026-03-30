@@ -24,9 +24,12 @@ class CategoryController extends Controller
     public function update(CategoryRequest $request)
     {
         $category = Category::find($request->id);
-        $category->update([
-            'name' => $request->name
-        ]);
+
+        if (!$category) {
+        return back()->withErrors(['id' => '更新対象のカテゴリが見つかりませんでした (ID: ' . $request->id . ')']);
+        }
+
+        $category->update(['name' => $request->name]);
 
         return redirect('/categories')->with('message', 'カテゴリを更新しました');
     }
@@ -37,5 +40,4 @@ class CategoryController extends Controller
         return redirect('/categories')->with('message', 'カテゴリを削除しました');
     }
 }
-
 

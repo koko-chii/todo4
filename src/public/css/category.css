@@ -7,7 +7,7 @@
 .category__alert--success {
     background-color: #d1e7dd;
     color: #0f5132;
-    padding: 15px 40px;
+    padding: 10px 40px;
     margin-bottom: 20px;
     font-size: 14px
     text-align: left;
@@ -17,7 +17,7 @@
 .category__alert--danger {
     background-color:#f8d7da;
     color: #842029;
-    padding: 15px 40px;
+    padding: 0px 40px;
     font-size: 14px;
     text-align: left;
     width: 100%;
@@ -68,18 +68,25 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px 0;
 }
 
 .category-table__item-input {
-    width: 60%;
-    padding: 15px 0;
+    flex: 1;
     border: none;
+    outline: none;
     background: transparent;
 }
 
-.category-table__buttons {
-    display: flex;
-    gap: 10px; /* ボタン同士の隙間 */
+.category-table__item-input:focus {
+    outline: none;    /* 青い枠線を消す */
+    box-shadow: none; /* 影がついている場合も消す */
+}
+
+.update-form {
+    display: flex; /* 入力欄と更新ボタンを横に並べる */
+    flex: 1;       /* 左側のスペースをいっぱいに使う */
+    align-items: center;
 }
 
 /* 更新・削除ボタン共通 */
@@ -96,8 +103,11 @@
 
 .update-form__button-submit {
     background-color: #4b00ff; /* 青 */
+    margin-right: 10px;
 }
 
 .delete-form__button-submit {
     background-color: #ff0000; /* 赤 */
+    margin-right: 20px;
 }
+

@@ -21,6 +21,7 @@ class Todo extends Model
         if (!empty($category_id)) {
         $query->where('category_id', $category_id);
         }
+        return $query;
     }
 
     public function scopeKeywordSearch($query, $keyword)

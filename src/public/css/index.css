@@ -65,6 +65,7 @@
     border: 1px solid #ccc;
     border-radius: 2px;
     margin-top: 20px;
+    padding: 0 10px;
 }
 
 .create-form__button-submit,
@@ -139,6 +140,7 @@
     outline: none; /* クリックした時の青い枠も消す場合 */
     font-size: 16px;
     color: #333;
+    padding: 0 10px;
 }
 
 .todo-table__buttons {
