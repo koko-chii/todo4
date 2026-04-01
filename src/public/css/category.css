@@ -17,10 +17,11 @@
 .category__alert--danger {
     background-color:#f8d7da;
     color: #842029;
-    padding: 0px 40px;
+    padding: 1px 40px;
     font-size: 14px;
     text-align: left;
     width: 100%;
+    margin-top: 0px;
 }
 
 .create-form {

@@ -38,6 +38,10 @@
     margin: 80px 0px 0px 120px;
 }
 
+.todo__search-form--ttl {
+    margin: 20px 0px 0px 120px;
+}
+
 .create-form,
 .todo__search-form {
     display: flex;
@@ -49,12 +53,24 @@
 
 .create-form__item input,
 .todo__search-form__item input {
-    width: 500px;
+    width: 480px;
     height: 40px;
     border: 1px solid #ccc;
     border-radius: 2px;
     margin-top: 20px;
     padding: 0 10px;
+}
+
+.category__select {
+    display: flex;
+    width: 160px;
+    height: 40px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    background-color: #fff;
+    color: #333;
+    margin-top: 20px;
 }
 
 .create-form__button-submit,
@@ -72,69 +88,56 @@
     white-space: nowrap;
 }
 
-.category__select {
-    display: flex;
-    width: 160px;
-    height: 40px;
-    padding: 0 10px;
-    border: 1px solid #ccc;
-    border-radius: 2px;
-    background-color: #fff;
-    color: #333;
-    margin-top: 20px;
-}
-
-.todo__search-form--ttl {
-    margin: 20px 0px 0px 120px;
-}
-
 /* テーブルスタイル */
 .todo-table__inner {
-    width: 900px;
+    width: 100%;
+    max-width: 900px;
     border-collapse: collapse;
     margin: 40px 0 0 120px;
+    table-layout: fixed;
 }
 
-.todo-table__header {
-    text-align: left;
+.todo-table__header,
+.todo-table__item {
+    padding: 15px 0;
     font-size: 20px;
-    padding-bottom: 0px;
-    border-bottom: none;
+    vertical-align: middle;
+}
+
+.todo-table__header:nth-child(1),
+.todo-table__item:nth-child(1) {
+    width: 20%;
+    text-align: left;
+}
+
+.todo-table__header:nth-child(2),
+.todo-table__item:nth-child(2) {
+    width: 80%;
+    text-align: center;
+}
+
+.todo-table__header:nth-child(3),
+.todo-table__item:nth-child(3) {
+    width: 25%;
+    text-align: right;
 }
 
 .todo-table__row {
     border-bottom: 1px solid #ccc;
 }
 
-/* 重要：文字とボタンを左右に分ける設定 */
-.todo-table__item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-}
-
-.todo-table__item form {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .todo-table__item-input {
-    width: 650px;
-    text-align: left;
+    width: 90%;
     border: none;
     background: transparent;
-    outline: none; /* クリックした時の青い枠も消す場合 */
+    outline: none;
     font-size: 16px;
-    color: #333;
-    padding: 0 10px;
 }
 
 .todo-table__buttons {
     display: flex;
-    gap: 10px; /* ボタン同士の隙間 */
+    justify-content: flex-end;
+    gap: 10px;
 }
 
 /* 更新・削除ボタン共通 */
