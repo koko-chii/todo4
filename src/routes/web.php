@@ -12,6 +12,6 @@ Route::delete('/todos/delete', [TodoController::class, 'destroy'])->name('todos.
 Route::get('/todos/search', [TodoController::class, 'search'])->name('todos.search');
 
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
-Route::post('/categories', [CategoryController::class, 'store'])->name('categories.index');
+Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
 Route::patch('/categories/update', [CategoryController::class, 'update'])->name('categories.update');
 Route::delete('/categories/delete', [CategoryController::class, 'destroy'])->name('categories.destroy');

@@ -13,29 +13,29 @@ class TodoController extends Controller
     {
         $todos = Todo::with('category')->get();
         $categories = Category::all();
+
         return view('index', compact('todos', 'categories'));
     }
 
     public function store(TodoRequest $request)
     {
-        $request->validate(['content' => 'required|max:20', ]);
+        $todoData = $request->only(['category_id', 'content']);
+        Todo::create($todoData);
 
-            Todo::create($request->all());
-
-            return redirect('/')->with('message', 'Todoを作成しました');
+        return redirect('/')->with('message', 'Todoを作成しました');
     }
 
     public function update(Request $request)
     {
-        $todo = Todo::find($request->id);
-        $todo->content = $request->content;
-        $todo->save();
+        Todo::where('id', $request->id)->update($request->only(['content']));
+
         return redirect('/')->with('message', 'Todoを更新しました');
     }
 
     public function destroy(Request $request)
     {
         $todo = Todo::find($request->id)->delete();
+
         return redirect('/')->with('message', 'Todoを削除しました');
     }
 

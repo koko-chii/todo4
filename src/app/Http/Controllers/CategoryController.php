@@ -12,23 +12,21 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
+
         return view('category', compact('categories'));
     }
 
     public function store(CategoryRequest $request)
     {
-        Category::create($request->all());
+        $validated = $request->validated();
+        Category::create($validated);
+
         return redirect('/categories')->with('message', 'カテゴリを作成しました');
     }
 
     public function update(CategoryRequest $request)
     {
-        $category = Category::find($request->id);
-
-        if (!$category) {
-        return back()->withErrors(['id' => '更新対象のカテゴリが見つかりませんでした (ID: ' . $request->id . ')']);
-        }
-
+        $category = Category::findOrFail($request->id);
         $category->update(['name' => $request->name]);
 
         return redirect('/categories')->with('message', 'カテゴリを更新しました');
@@ -36,7 +34,8 @@ class CategoryController extends Controller
 
     public function destroy(Request $request)
     {
-        Category::find($request->id)->delete();
+        Category::findOrFail($request->id)->delete();
+
         return redirect('/categories')->with('message', 'カテゴリを削除しました');
     }
 }
