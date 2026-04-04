@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TodoController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PracticeController;
 
 
 Route::get('/', [TodoController::class, 'index']);
@@ -15,3 +16,6 @@ Route::get('/categories', [CategoryController::class, 'index'])->name('categorie
 Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
 Route::patch('/categories/update', [CategoryController::class, 'update'])->name('categories.update');
 Route::delete('/categories/delete', [CategoryController::class, 'destroy'])->name('categories.destroy');
+
+
+Route::get('/test/{menu}', [PracticeController::class, 'index']);
