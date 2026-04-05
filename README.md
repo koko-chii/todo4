@@ -8,6 +8,12 @@
 git clone git@github.com:koko-chii/todo4.git
 ```
 
+#### ディレクトリの移動
+
+```
+cd todo4
+```
+
 #### Laravelのビルド
 
 ```
@@ -17,7 +23,7 @@ docker compose up -d --build
 #### ディレクトリの移動
 
 ```
-code src
+cd src
 ```
 
 #### PHPコンテナ内ログインと　Laravel パッケージのダウンロード
@@ -34,6 +40,8 @@ cp .env.example .env
 #### .env ファイルの修正
 
 ```
+DB_CONNECTION=mysql
+
 MYSQL_DATABASE: laravel_db
 
 MYSQL_USER: laravel_user
@@ -44,7 +52,15 @@ MYSQL_PASSWORD: laravel_pass
 #### キー生成
 
 ```
-php artisan key:generate
+docker compose exec php php artisan key:generate
+
+```
+
+#### 権限の付与
+
+```
+docker compose exec php chmod -R 777 storage bootstrap/cache
+
 ```
 
 #### マイグレーション・シーディングを実行
@@ -58,7 +74,7 @@ docker-compose exec php bash -c "composer install && php artisan migrate --seed"
 
 フレームワーク：Laravel 8.83.8
 
-言語：PHP 7.3 / 8.0 以上
+言語：PHP 8.1 以上
 
 Webサーバー：Nginx 1.21.1
 
