@@ -1,5 +1,7 @@
 # Todoアプリ
 
+このリポジトリは、laravelを使用したTodoアプリです。
+
 ## 環境構築
 
 #### リポジトリをクローン
@@ -11,27 +13,8 @@ git clone git@github.com:koko-chii/todo4.git
 #### ディレクトリの移動
 
 ```
-cd todo4
+cd todo4/src
 ```
-
-#### Laravelのビルド
-
-```
-docker compose up -d --build
-```
-
-#### ディレクトリの移動
-
-```
-cd src
-```
-
-#### PHPコンテナ内ログインと　Laravel パッケージのダウンロード
-
-```
-docker-compose exec php composer install
-```
-
 #### .env ファイルの作成
 
 ```
@@ -41,33 +24,53 @@ cp .env.example .env
 
 ```
 DB_CONNECTION=mysql
-
-MYSQL_DATABASE: laravel_db
-
-MYSQL_USER: laravel_user
-
-MYSQL_PASSWORD: laravel_pass
+DB_HOST=mysql
+DB_PORT=3306
+DB_DATABASE=laravel_db
+DB_USERNAME=laravel_user
+DB_PASSWORD=laravel_pass
 ```
 
-#### キー生成
+#### ディレクトリの移動
+
+```
+cd ..
+```
+
+#### コンテナの起動
+
+```
+docker compose up -d --build
+```
+
+#### PHPライブラリのインストール
+
+```
+
+docker compose exec -u 1000 php composer install
+```
+
+#### PHPライブラリのインストール
+
+```
+npm install && npm run build
+```
+
+### キー生成
 
 ```
 docker compose exec php php artisan key:generate
-
 ```
 
 #### 権限の付与
 
 ```
 docker compose exec php chmod -R 777 storage bootstrap/cache
+```
+### マイグレーション・シーディングを実行
 
 ```
-
-#### マイグレーション・シーディングを実行
-
-```
-docker-compose exec php bash -c "composer install && php artisan migrate --seed"
-
+docker-compose exec php php artisan migrate --seed
 ```
 
 ## 使用技術（実行環境）
